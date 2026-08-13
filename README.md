@@ -30,6 +30,8 @@ dotclaude/
   commands/
     *.md                   # カスタムスラッシュコマンド定義
   settings.json            # permissions.allow のテンプレート（マージ用スニペット）
+  skills/
+    */                     # スキル定義一式（大半は外部スキル集からの複製。下記「skills/ について」参照）
 ```
 
 ### `rules/common/` と `rules/java/` の関係
@@ -39,6 +41,14 @@ dotclaude/
 ### `agents/` と `agents/java/` の関係
 
 `agents/` 配下は言語・フレームワークを問わず使えるように framing を汎用化したエージェント定義。`agents/java/` 配下の3ファイル（`reviewer.md`, `java-reviewer.md`, `java-build-resolver.md`）は JavaDoc・Maven・Mockito 前提の内容が本質的に Java/Spring Boot 固有のため、汎用化せずそのまま Java 向けとして残している。Java プロジェクトでは `agents/` の該当ファイルと `agents/java/` の3ファイルを両方コピーする。
+
+### `skills/` について
+
+`skills/` 配下30個のうち、大半（`gateguard`, `springboot-patterns`, `security-review` 等）は自作ではなく**外部のスキル集から複製したもの**。再入手可能な内容だが、環境を移す際に毎回同じスキル集を探し直す手間を省くためバックアップとして含めている。以下の3個だけは事情が異なるので個別に注意する:
+
+- **`review`**: Java専門のコードレビューチェックリスト。自作で、`agents/java/reviewer.md` と観点が重複している
+- **`continuous-learning-v2`**: セッションを観測して再利用可能なパターンを自動抽出する自律学習システム。`hooks/observe.sh` を `PreToolUse`/`PostToolUse` フックとして `settings.json` に登録しないと動作しない（スキルフォルダをコピーするだけでは有効化されない）
+- **`learned/`**: `/learn` コマンドの出力先（空フォルダ）。中身は都度生成されるものなので空のままでよい
 
 ## 使い方
 
@@ -70,6 +80,10 @@ dotclaude/
 1. 対象の `~/.claude/settings.json`（全プロジェクト共通）または `.claude/settings.json` / `.claude/settings.local.json`（プロジェクト単位）を開く
 2. 既存の `permissions.allow` 配列に、必要なパターンだけ追記する（既存の許可設定を上書きしないこと）
 3. 破壊的なコマンド（`git push --force` 等）は意図的に含めていない。許可したい場合は個別に検討して追加する
+
+### 6. skills をコピーする場合
+
+使いたいスキルだけを対象プロジェクトの `.claude/skills/`（プロジェクト単位）または `~/.claude/skills/`（全プロジェクト共通）にコピーする。`continuous-learning-v2` を有効化する場合は、対応する `hooks` 設定（`settings.json` の該当セクション）も一緒に用意する必要がある。
 
 ## 注意事項
 
