@@ -29,6 +29,7 @@ dotclaude/
     java/                  # Java/Spring Boot固有のサブエージェント定義（JavaDoc・Maven・Mockito前提）
   commands/
     *.md                   # カスタムスラッシュコマンド定義
+  settings.json            # permissions.allow のテンプレート（マージ用スニペット）
 ```
 
 ### `rules/common/` と `rules/java/` の関係
@@ -61,6 +62,14 @@ dotclaude/
 ### 4. commands をコピーする場合
 
 使いたいコマンドだけを対象プロジェクトの `.claude/commands/`（プロジェクト単位で使う場合）または `~/.claude/commands/`（全プロジェクト共通で使う場合）にコピーする。コピーすると `/learn` のようにスラッシュコマンドとして呼び出せるようになる。
+
+### 5. settings.json の permissions.allow を使う場合
+
+`settings.json` は**そのまま上書きコピーするファイルではなく、マージ用のスニペット**。よく使う読み取り系コマンド・Git操作・MCPツール（Playwright・Context7・Serena等）を確認プロンプト無しで許可するパターン集。
+
+1. 対象の `~/.claude/settings.json`（全プロジェクト共通）または `.claude/settings.json` / `.claude/settings.local.json`（プロジェクト単位）を開く
+2. 既存の `permissions.allow` 配列に、必要なパターンだけ追記する（既存の許可設定を上書きしないこと）
+3. 破壊的なコマンド（`git push --force` 等）は意図的に含めていない。許可したい場合は個別に検討して追加する
 
 ## 注意事項
 

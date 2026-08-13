@@ -1,0 +1,81 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls *)",
+      "Bash(dir)",
+      "Bash(fd *)",
+      "Bash(rg *)",
+      "Bash(which *)",
+      "Bash(xargs grep:*)",
+      "Bash(bash --version)",
+      "Bash(python3 -m json.tool)",
+      "Bash(Get-Random)",
+      "Bash(Select-Object -ExpandProperty Name)",
+      "Bash(Get-ChildItem *)",
+      "Bash(powershell.exe *)",
+      "Bash(cd /tmp)",
+      "Read(//tmp/**)",
+      "Bash(netstat -ano)",
+      "PowerShell(netstat -ano)",
+      "PowerShell(Get-NetTCPConnection *)",
+      "PowerShell(Get-Job)",
+      "PowerShell(New-Item *)",
+      "PowerShell(Stop-Process *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(Get-Command *)",
+
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit *)",
+      "Bash(git fetch *)",
+      "Bash(git checkout *)",
+      "Bash(git pull)",
+      "Bash(git pull *)",
+      "Bash(git merge *)",
+      "Bash(git worktree add *)",
+      "Bash(git worktree remove *)",
+      "Bash(git branch -d *)",
+      "Bash(git push)",
+      "Bash(git push origin *)",
+      "Bash(git push --tags)",
+      "Bash(git push --follow-tags)",
+      "Bash(git push -u origin *)",
+      "PowerShell(git *)",
+
+      "Bash(gh issue *)",
+
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_type",
+
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+
+      "mcp__serena__initial_instructions",
+      "mcp__serena__check_onboarding_performed",
+      "mcp__serena__onboarding",
+      "mcp__serena__list_memories",
+      "mcp__serena__write_memory",
+      "mcp__serena__read_memory",
+      "mcp__serena__find_symbol",
+      "mcp__serena__activate_project",
+
+      "mcp__ide__getDiagnostics",
+      "mcp__mcp-registry__list_connectors",
+      "mcp__mcp-registry__search_mcp_registry",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__computer",
+
+      "Skill(update-config)",
+      "Skill(update-config:*)"
+    ]
+  }
+}
