@@ -1,0 +1,46 @@
+# このリポジトリは公開されている。
+# ~/.claude を丸ごと同期する運用に切り替えた場合でも機密・実行時データが
+# 混入しないよう、歯止めとして除外パターンを定義しておく。
+
+# 認証情報・鍵（絶対にコミットしない）
+.credentials.json
+*.key
+
+# 会話履歴・ログ（社内情報が含まれうる）
+history.jsonl
+*.log
+
+# 組織のポリシー設定
+remote-settings.json
+remote-settings-consent.json
+policy-limits.json
+
+# Claude Code の実行時データ
+projects/
+sessions/
+session-env/
+shell-snapshots/
+file-history/
+paste-cache/
+telemetry/
+debug/
+plans/
+tasks/
+jobs/
+backups/
+cache/
+downloads/
+daemon/
+plugins/
+stats-cache.json
+daemon.status.json
+.last-cleanup
+.last-update-result.json
+
+# ワークツリー
+.claude/worktrees/
+
+# OS 生成ファイル
+.DS_Store
+Thumbs.db
+Desktop.ini

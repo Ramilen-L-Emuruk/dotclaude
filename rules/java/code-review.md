@@ -1,3 +1,7 @@
+---
+paths:
+  - "**/*.java"
+---
 # Java コードレビュー基準
 
 汎用的なレビュータイミング・重要度レベル・承認基準は [code-review.md](../common/code-review.md) を参照。本ファイルは Java/Spring Boot 固有のチェックリストをまとめる。
