@@ -1,3 +1,10 @@
+---
+paths:
+  - "**/*.java"
+  - "**/pom.xml"
+  - "**/build.gradle"
+  - "**/build.gradle.kts"
+---
 # Java テスト要件
 
 汎用的な TDD ワークフロー・エッジケース・アンチパターン・品質チェックリストは [testing.md](../common/testing.md) を参照。本ファイルは JUnit 5 / Mockito を使った具体的な書き方をまとめる。

@@ -1,3 +1,10 @@
+---
+paths:
+  - "**/*.java"
+  - "**/pom.xml"
+  - "**/build.gradle"
+  - "**/build.gradle.kts"
+---
 # Java/Spring Boot エージェント構成
 
 汎用的なエージェント一覧・自動呼び出しルール・並列実行パターンの全体像は [agents.md](../common/agents.md) を参照。本ファイルはそこから切り出した Java/Spring Boot 固有の詳細をまとめる。

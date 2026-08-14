@@ -1,3 +1,10 @@
+---
+paths:
+  - "**/*.java"
+  - "**/pom.xml"
+  - "**/build.gradle"
+  - "**/build.gradle.kts"
+---
 # Java パフォーマンスの考慮事項
 
 ## 実装レベルの最適化

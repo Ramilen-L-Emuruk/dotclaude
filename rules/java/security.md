@@ -1,3 +1,7 @@
+---
+paths:
+  - "**/*.java"
+---
 # Java/Spring セキュリティガイドライン
 
 汎用的な必須セキュリティチェック・シークレット管理・対応プロトコルは [security.md](../common/security.md) を参照。本ファイルは Java/Spring 固有の対策をまとめる。

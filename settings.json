@@ -76,6 +76,52 @@
 
       "Skill(update-config)",
       "Skill(update-config:*)"
+    ],
+
+    "ask": [
+      "Bash(git push *--force*)",
+      "Bash(git push *-f *)",
+      "Bash(git push *-f)"
+    ],
+
+    "defaultMode": "auto"
+  },
+
+  "model": "claude-sonnet-5",
+  "language": "日本語",
+  "effortLevel": "xhigh",
+  "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
+  "autoCompactEnabled": false,
+  "skipAutoPermissionPrompt": true,
+
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.sh"
+  },
+
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/skills/continuous-learning-v2/hooks/observe.sh pre"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/skills/continuous-learning-v2/hooks/observe.sh post"
+          }
+        ]
+      }
     ]
   }
 }
