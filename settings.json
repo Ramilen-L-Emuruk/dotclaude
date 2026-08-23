@@ -26,6 +26,10 @@
       "PowerShell(Get-Command *)",
 
       "Bash(git add *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git rev-parse *)",
+      "Bash(git merge-base *)",
       "Bash(git commit -m ' *)",
       "Bash(git commit *)",
       "Bash(git fetch *)",
@@ -39,6 +43,7 @@
       "Bash(git branch -d *)",
       "Bash(git branch -m *)",
       "Bash(git branch --list *)",
+      "Bash(git branch --merged *)",
       "Bash(git branch --show-current)",
       "Bash(git tag *)",
       "Bash(git rev-list *)",
