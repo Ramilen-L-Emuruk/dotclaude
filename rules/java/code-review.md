@@ -25,6 +25,7 @@ paths:
 - [ ] `@Transactional` のスコープが適切であること（readOnly の使い分け）
 - [ ] Spring Bean のスコープとライフサイクルが正しいこと
 - [ ] 並行処理の安全性（スレッドセーフ、デッドロック回避）
+- [ ] `wait`/`notifyAll` で待ち合わせる場合、[coding-style.md](../common/coding-style.md)「並行処理での待ち合わせ」を満たしていること（通知経路の網羅性・状態を変えないガードの扱い）
 - [ ] Controller-Service-Repository の責務分離が適切であること
 
 ### JavaDoc の正確性（comment-analyzer エージェント担当）
