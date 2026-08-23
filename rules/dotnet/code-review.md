@@ -45,6 +45,12 @@ paths:
 - [ ] `CancellationToken` が呼び出しチェーンを通じて伝播していること
 - [ ] ライブラリ層の `await` に `ConfigureAwait(false)` が付いていること
 
+### スレッド間の待ち合わせ
+
+- [ ] `Monitor.Wait`/`Monitor.PulseAll` で待ち合わせる場合、[coding-style.md](../common/coding-style.md)「並行処理での待ち合わせ」を満たしていること（通知経路の網羅性・状態を変えないガードの扱い）
+- [ ] `Monitor.Wait` のループ条件に、終了要求と状態リセットの脱出条件が含まれていること
+- [ ] `lock` 内から外部コールバック（デリゲート・イベント）を呼ぶ箇所で、コールバック側が別のロックを取っていないこと（デッドロック源）
+
 ### UI（WPF / WinForms を使う場合）
 
 - [ ] UI 要素への読み書きが UI スレッド上で行われていること（`Dispatcher.Invoke` / `InvokeAsync` 等）
