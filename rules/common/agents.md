@@ -27,7 +27,7 @@
 | doc-updater | haiku | ドキュメント更新 | ドキュメント更新時 |
 | adversarial-reviewer | sonnet | 敵対的レビュー | 全変更・検証後・コミット前（必須） |
 | meta-reviewer | sonnet | 一次レビュー指摘の再検証 | 大規模変更時・CRITICAL/HIGH の確認 |
-| doc-objectivity-reviewer | sonnet | ドキュメント客観レビュー | ドキュメント更新後・コミット前 |
+| doc-objectivity-reviewer | sonnet | ドキュメント・利用者向けの文字列の客観レビュー | ドキュメントまたは UI 文言・`description` 等を更新した後・コミット前 |
 
 ## エージェント自動呼び出しルール
 
@@ -75,6 +75,7 @@
 | 全変更・検証後・コミット前（必須） | **adversarial-reviewer** |
 | 大規模変更の CRITICAL / HIGH 指摘を再検証 | **meta-reviewer** |
 | ドキュメントを更新した後 | **doc-objectivity-reviewer** |
+| 利用者向けの文字列（UI 文言・データファイルの `description` 等）を新規作成・更新した後 | **doc-objectivity-reviewer** |
 | MR/PR URL（＋課題管理チケット）で他者作成のレビューを依頼された | [mr-review.md](./mr-review.md) のフローに従い `code-reviewer` + フレームワーク固有レビューア（該当する場合） + `adversarial-reviewer` を並列起動 |
 
 ### フェーズ 4: 最適化・整理
