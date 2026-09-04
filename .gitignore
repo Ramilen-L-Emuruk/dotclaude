@@ -44,3 +44,6 @@ daemon.status.json
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# リリース手続きの排他ロック（実行時の状態）
+.claude/release.lock
